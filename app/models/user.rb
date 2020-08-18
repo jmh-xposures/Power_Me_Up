@@ -6,4 +6,6 @@ class User < ApplicationRecord
 
   has_many :powers
   has_many :rentals
+
+  validates :full_name, presence: true
 end
