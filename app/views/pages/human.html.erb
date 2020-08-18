@@ -1,1 +1,9 @@
-<h1>suck</h1>
+<h1>humain profile  </h1>
+<%= current_user.email %>
+<%= current_user.full_name %>
+<ul>
+  <% current_user.rentals.each do |rental| %>
+    <li><%= rental#powercard %></li>
+  <% end %>
+</ul>
+	
