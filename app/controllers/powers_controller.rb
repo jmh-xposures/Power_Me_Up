@@ -1,4 +1,5 @@
 class PowersController < ApplicationController
+
   before_action :set_power, only: [:show, :destroy]
 
   # GET /powers
