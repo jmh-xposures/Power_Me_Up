@@ -2,18 +2,18 @@ class RentalsController < ApplicationController
 
   def new
     @rental = Rental.new
+    @power = Power.find(params[:power_id])
   end
 
   def create
     @rental = Rental.new(rental_params)
-    # @power = Power.find(params[:power_id])
-    # By permitting it in the rental_params power_id is included in the rental params
-    # @rental.power_id = @power.id
+    @power = Power.find(params[:power_id])
+    @rental.power_id = @power.id
     @rental.user = current_user
 
     if @rental.save
       flash.notice = "Thank you for booking this power!"
-      redirect_to power_path(@rental.power)
+      # Need to redirect
     else
       render :new
     end
@@ -27,6 +27,6 @@ class RentalsController < ApplicationController
   private
 
   def rental_params
-    params.require(:rental).permit(:content, :power_id)
+    params.require(:rental).permit(:comment)
   end
 end
