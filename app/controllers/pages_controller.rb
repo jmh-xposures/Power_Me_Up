@@ -9,7 +9,7 @@ class PagesController < ApplicationController
   end
 
   def home
-    @top_powers = Rental.group(:power_id).count.order(:desc).limit(10)
+    @top_powers = Power.all.to_a.sort_by { |power| - power.rentals.count }.first(10)
   end
 
 end
