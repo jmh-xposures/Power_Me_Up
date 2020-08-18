@@ -1,0 +1,9 @@
+<h1>rental page</h1>
+
+<h2><%= @power.name %></h2>
+<p><%= @power.price %></p>
+
+<%= simple_form_for([@power, @rental]) do |f| %>
+  <%= f.input :comment %>
+  <%= f.submit %>
+  <% end %>
