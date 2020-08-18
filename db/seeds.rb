@@ -43,7 +43,3 @@ end
         password: 123456
         )
 end
-p heros 
-p powers
-p humans
-p "done"
