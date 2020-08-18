@@ -1,4 +1,5 @@
 class PagesController < ApplicationController
+
   def profile
   	if current_user.is_hero 
   	   render "hero" 
@@ -10,6 +11,6 @@ class PagesController < ApplicationController
   def home 
   end
 
-  end
+end
 
 
