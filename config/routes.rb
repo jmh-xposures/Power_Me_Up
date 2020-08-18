@@ -7,5 +7,5 @@ Rails.application.routes.draw do
   resources :powers, except:[:update, :edit] do
       resources :rentals, only:[:new, :create]
   end
-  resources :rentals, only:[:update, :show]
+  resources :rentals, only:[:update, :index]
 end
