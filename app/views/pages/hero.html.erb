@@ -1,1 +1,14 @@
 <h1> rambo</h1>
+<%=current_user.email%>
+<%= current_user.full_name %>
+<ul>
+	<% current_user.powers.each do |power| %>
+	    <li><%= power.name%></li>
+	  
+		<% if rental.status == nil %>
+			<div class = "green-dot"></div>
+		<% elsif rental.status == false %>
+			<p> Denied </p>
+	  	<% end %>
+	<% end %>
+</ul>
