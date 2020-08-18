@@ -24,6 +24,10 @@ class RentalsController < ApplicationController
     #should I have two methods for each button (accept or reject) instead of this method
   end
 
+  def show
+    @rental = Rental.find(params[:id])
+  end
+
   private
 
   def rental_params
