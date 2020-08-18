@@ -1,0 +1,7 @@
+<%= simple_form_for(@power) do |f| %>
+  <%= f.input :name %>
+  <%= f.input :price %>
+  <%= f.input :short_description, data: { editor: 'markdown' }, rows: 3 %>
+  <%= f.input :long_description, data: { editor: 'markdown' }, rows: 5 %>
+  <%= f.submit %>
+<% end %>
