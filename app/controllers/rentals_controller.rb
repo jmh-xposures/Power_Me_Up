@@ -7,7 +7,7 @@ class RentalsController < ApplicationController
   def create
     @rental = Rental.new(rental_params)
     # @power = Power.find(params[:power_id])
-    #By permitting it in the rental_params power_id is included in the rental params
+    # By permitting it in the rental_params power_id is included in the rental params
     # @rental.power_id = @power.id
     @rental.user = current_user
 
@@ -22,10 +22,7 @@ class RentalsController < ApplicationController
   def update
     @rental = Rental.find(params[:id])
     #should I have two methods for each button (accept or reject) instead of this method
-
   end
-
-
 
   private
 
