@@ -1,0 +1,8 @@
+<% @powers.each do |power| %>
+  <div>
+    <h2><%= link_to power.name, power %></h2>
+    <%= power.short_description %>
+    <%= power.price %>
+    <%= power.long_description %>
+  </div>
+<% end %>
