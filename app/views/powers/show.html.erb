@@ -2,8 +2,9 @@
   Superpower - <%= @power.name %>
 <% end %>
 
-<%= cl_image_tag @power.photo.key, height: 300, width: 400, crop: :fill %>
-
+<% if @power.photo.attached? %>
+	<%= cl_image_tag @power.photo.key, height: 300, width: 400, crop: :fill %>
+<% end %>
 <div>
   <h1>
     <%= @power.name %>
@@ -22,7 +23,10 @@
         </button>
       </div>
       <div class="modal-body">
-
+		<h3><%= @power.name %></h3>
+		<% if @power.photo.attached? %>
+		 <%= cl_image_tag @power.photo.key, height: 300, width: 400, crop: :fill %>
+		<% end %>
       	<%= simple_form_for [ @power, @rental ] do |f| %>
       	 <%= f.input :comment %>
       	 <%= f.submit "Submit to Hero", class: "btn btn-primary" %>
