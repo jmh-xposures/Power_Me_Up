@@ -10,6 +10,7 @@
 require 'faker'
 User.destroy_all
 Power.destroy_all
+Rental.destroy_all
 heros = []
 humans = []
 powers = []
