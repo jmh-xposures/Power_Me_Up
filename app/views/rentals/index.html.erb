@@ -6,8 +6,8 @@
     <%= rental.power.name %>
     <%= rental.power.short_description %>
     <%= rental.comment %>
-      <p><%= link_to 'Accept', accepted_path(rental) %></p>
-      <p><%= link_to 'Decline', declined_path(rental) %></p>
+      <p><%= button_to 'Accept', accepted_path(rental), method: :patch %></p>
+      <p><%= button_to 'Decline', declined_path(rental), method: :patch %></p>
     <% end %>
   </p></div>
 </div>

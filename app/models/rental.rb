@@ -9,7 +9,7 @@ class Rental < ApplicationRecord
   end
 
   def declined!
-    self.status = true     
+    self.status = false     
   end
   
 end
