@@ -1,11 +1,21 @@
-<h2><% @pending_rentals.each do |rental| %> 
+<p><% @pending_rentals.each do |rental| %> 
   <%= rental.user.full_name %>
   <% end %>  
-</h2>
-<%# <p><%= @pending_rentals.email %></p> %>
+</p>
 
-<%# <h2><%= @pending_rentals.name %></h2> %>
-<%# <p><%= @pending_rentals.comment %></p> %>
+<p><% @pending_rentals.each do |rental| %>
+  <%= rental.user.email %>
+  <% end %>
+</p>
 
-<%# <p><%= link_to "Approve", profile_path %></p>
-<%# <p><%= link_to "Refuse", profile_path %></p> %> %>
+<p><% @pending_rentals.each do |rental| %>
+  <%= rental.power.name %>
+  <% end %>
+</p>
+
+<p><% @pending_rentals.each do |rental| %>
+  <%= rental.comment %>
+  <% end %>
+</p>
+
+<p><%= link_to 'back to your profil', profile_path %></p>
