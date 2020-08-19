@@ -28,7 +28,18 @@ class RentalsController < ApplicationController
     @pending_rentals = Rental.joins(:power).where(status: nil , powers: {user: current_user})
   end
 
-  def approval
+  def accepted
+    @rental = Rental.find(params[:id])
+    @rental.accepted!
+    @rental.save
+    redirect_to rentals_path
+  end
+
+  def declined
+    @rental = Rental.find(params[:id])
+    @rental.declined!
+    @rental.save
+    redirect_to rentals_path
   end
 
   private

@@ -1,29 +1,18 @@
-<p><% @pending_rentals.each do |rental| %> 
-  <%= rental.user.full_name %>
-  <% end %>  
-</p>
+<div>
+  <div>
+  <p><% @pending_rentals.each do |rental| %>
+    <%= rental.user.full_name %>
+    <%= rental.user.email %>
+    <%= rental.power.name %>
+    <%= rental.power.short_description %>
+    <%= rental.comment %>
+      <p><%= link_to 'Accept', accepted_path(rental) %></p>
+      <p><%= link_to 'Decline', declined_path(rental) %></p>
+    <% end %>
+  </p></div>
+</div>
 
-<p><% @pending_rentals.each do |rental| %>
-  <%= rental.user.email %>
-  <% end %>
-</p>
 
-<p><% @pending_rentals.each do |rental| %>
-  <%= rental.power.name %>
-  <% end %>
-</p>
 
-<p><% @pending_rentals.each do |rental| %>
-  <%= rental.power.short_description %>
-  <% end %>
-</p>
-
-<p><% @pending_rentals.each do |rental| %>
-  <%= rental.comment %>
-  <% end %>
-</p>
-
-<p><%= link_to 'Accept', profile_path %></p>
-<p><%= link_to 'Refuse', profile_path %></p>
 
 <p><%= link_to 'back to your profil', profile_path %></p>
