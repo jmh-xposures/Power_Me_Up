@@ -1,15 +1,11 @@
 <h1> hero profile </h1>
 <%=current_user.email%>
 <%= current_user.full_name %>
+<p> pending rental <%= @number_of_pending_rentals %></p>
+
 <ul>
 	<% current_user.powers.each do |power| %>
 	    <li><%= power.name%></li>
-	  	<% unless power.rentals == [] %>
-			<% if power.rentals[0].status == nil %>
-				<div class = "yellow-dot"></div>
-			<% elsif rental.status == false %>
-				<p> Denied </p>
-	  		<% end %>
-	  	<% end %>
+	  	
 	<% end %>
 </ul>
