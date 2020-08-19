@@ -14,8 +14,16 @@
 </p>
 
 <p><% @pending_rentals.each do |rental| %>
+  <%= rental.power.short_description %>
+  <% end %>
+</p>
+
+<p><% @pending_rentals.each do |rental| %>
   <%= rental.comment %>
   <% end %>
 </p>
+
+<p><%= link_to 'Accept', profile_path %></p>
+<p><%= link_to 'Refuse', profile_path %></p>
 
 <p><%= link_to 'back to your profil', profile_path %></p>
