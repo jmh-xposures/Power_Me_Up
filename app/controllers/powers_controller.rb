@@ -9,6 +9,7 @@ class PowersController < ApplicationController
 
   # GET /powers/1
   def show
+    @rental = Rental.new 
   end
 
   # GET /powers/new

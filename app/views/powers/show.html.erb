@@ -2,6 +2,15 @@
   Superpower - <%= @power.name %>
 <% end %>
 
+
+<% if @power.photo.attached? %>
+	<%= cl_image_tag @power.photo.key, height: 300, width: 400, crop: :fill %>
+<% end %>
+<div>
+  <h1>
+    <%= @power.name %>
+  </h1>
+
 <div class="d-flex">
   <div class="card">
     <div class="row">
@@ -49,6 +58,7 @@
       </div>
     </div>
   </div>
+
 </div>
 
 
@@ -64,25 +74,22 @@
         </button>
       </div>
       <div class="modal-body">
-        <form>
-        	<div class="card border-primary mb-3" style="max-width: 20rem;">
-  <div class="card-header"><%= @power.name %></div>
-  <div class="card-body">
-    <h4 class="card-title">Primary card title</h4>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-  
-          <div class="form-group">
-            <label for="recipient-name" class="col-form-label"> 
-          </div>
-          <div class="form-group">
-            <label for="message-text" class="col-form-label">Message to hero:</label>
-            <textarea class="form-control" id="message-text"></textarea>
-          </div>
-        </form>
+		<h3><%= @power.name %></h3>
+		<% if @power.photo.attached? %>
+		 <%= cl_image_tag @power.photo.key, height: 300, width: 400, crop: :fill %>
+		<% end %>
+      	<%= simple_form_for [ @power, @rental ] do |f| %>
+      	 <%= f.input :comment %>
+      	 <%= f.submit "Submit to Hero", class: "btn btn-primary" %>
+ 		<% end %>
+
+
       </div>
+
+
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Submit to Hero</button>
+      
       </div>
     </div>
   </div>

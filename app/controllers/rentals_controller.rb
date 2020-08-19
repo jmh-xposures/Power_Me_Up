@@ -13,6 +13,7 @@ class RentalsController < ApplicationController
 
     if @rental.save
       flash.notice = "Thank you for booking this power!"
+      redirect_to rentals_path
       # Need to redirect
     else
       render :new
