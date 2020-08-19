@@ -2,6 +2,7 @@
   Superpower - <%= @power.name %>
 <% end %>
 
+
 <% if @power.photo.attached? %>
 	<%= cl_image_tag @power.photo.key, height: 300, width: 400, crop: :fill %>
 <% end %>
@@ -9,7 +10,57 @@
   <h1>
     <%= @power.name %>
   </h1>
+
+<div class="d-flex">
+  <div class="card">
+    <div class="row">
+      <div class="card-body">
+        <h1>
+          <%= @power.name %>
+        </h1>
+        <p style="text-align: left;">Power owned by Hero</p>
+        <hr class="my-3">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit omnis ipsa porro amet <br>
+          sequi quis error voluptates molestias ad itaque expedita, veniam at.<br>
+          Suscipit atque dolorum quis reiciendis, quam molestias.</p>
+        <div style="text-align: right;">$20.000</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card d-flex">
+    <div>
+      <button type="button" class="btn btn-secondary">Rent Power</button>
+    </div>
+    <p>Reviews</p>
+    <div class="row">
+      <div class="card" style="width: 400px;">
+        <h3>Power 1</h3>
+        <p>Some text</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="card" style="width: 400px;">
+        <h3>Power 2</h3>
+        <p>Some text</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="card" style="width: 400px;">
+        <h3>Power 3</h3>
+        <p>Some text</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="card" style="width: 400px;">
+        <h3>Power 4</h3>
+        <p>Some text</p>
+      </div>
+    </div>
+  </div>
+
 </div>
+
 
 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@getbootstrap">Submit to hero</button>
 
@@ -43,4 +94,5 @@
     </div>
   </div>
 </div>
+
 
