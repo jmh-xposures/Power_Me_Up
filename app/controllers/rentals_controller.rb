@@ -28,6 +28,9 @@ class RentalsController < ApplicationController
     @pending_rentals = Rental.joins(:power).where(status: nil , powers: {user: current_user})
   end
 
+  def approval
+  end
+
   private
 
   def rental_params
