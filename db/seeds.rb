@@ -14,7 +14,7 @@ heros = []
 humans = []
 powers = []
 
-5.times do 
+5.times do
     heros << User.create!(
         email: Faker::Internet.email,
         full_name: Faker::Superhero.name,
@@ -43,3 +43,21 @@ end
         password: 123456
         )
 end
+
+Rental.create!(
+  comment: "lorem ipsum",
+  power: Power.first,
+  user: humans.first
+  )
+
+Rental.create!(
+  comment: "lorem ipsum",
+  power: Power.second,
+  user: humans.first
+  )
+
+Rental.create!(
+  comment: "lorem ipsum",
+  power: Power.second,
+  user: humans.first
+  )
