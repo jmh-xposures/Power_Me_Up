@@ -51,6 +51,6 @@ class PowersController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def power_params
-      params.require(:power).permit(:name, :short_description, :price, :long_description)
+      params.require(:power).permit(:name, :short_description, :price, :long_description, :photo)
     end
 end

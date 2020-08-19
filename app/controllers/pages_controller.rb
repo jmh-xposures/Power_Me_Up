@@ -1,4 +1,6 @@
 class PagesController < ApplicationController
+  skip_before_action :authenticate_user!, only: :home
+
   def profile
   	if current_user.is_hero
   	   render "hero"

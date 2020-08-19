@@ -2,8 +2,11 @@
   Superpower - <%= @power.name %>
 <% end %>
 
+<%= cl_image_tag @power.photo.key, height: 300, width: 400, crop: :fill %>
+
 <div>
   <h1>
     <%= @power.name %>
   </h1>
 </div>
+
