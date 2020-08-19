@@ -24,6 +24,24 @@ class RentalsController < ApplicationController
     #should I have two methods for each button (accept or reject) instead of this method
   end
 
+  def index
+    @pending_rentals = Rental.joins(:power).where(status: nil , powers: {user: current_user})
+  end
+
+  def accepted
+    @rental = Rental.find(params[:id])
+    @rental.accepted!
+    @rental.save
+    redirect_to rentals_path
+  end
+
+  def declined
+    @rental = Rental.find(params[:id])
+    @rental.declined!
+    @rental.save
+    redirect_to rentals_path
+  end
+
   private
 
   def rental_params
