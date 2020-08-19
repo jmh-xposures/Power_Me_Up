@@ -2,11 +2,14 @@
   Superpower - <%= @power.name %>
 <% end %>
 
+<%= cl_image_tag @power.photo.key, height: 300, width: 400, crop: :fill %>
+
 <div>
   <h1>
     <%= @power.name %>
   </h1>
 </div>
+
 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@getbootstrap">Submit to hero</button>
 
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -42,3 +45,4 @@
     </div>
   </div>
 </div>
+
