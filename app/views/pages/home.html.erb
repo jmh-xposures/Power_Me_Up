@@ -5,9 +5,9 @@
 <ul>
   <%@top_powers.each do |top_power| %>
   <li>
-    <%= top_power.name %>
-    <%= top_power.name %>
-    <%= top_power.price %>
+    <p><strong><%= top_power.name %></strong></p>
+    <%= top_power.short_description %>
+    <%= top_power.price %>$
   </li>
   <% end %>
 </ul>
