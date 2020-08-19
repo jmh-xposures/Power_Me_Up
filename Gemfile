@@ -22,6 +22,11 @@ gem 'jbuilder', '~> 2.7'
 # Use Active Model has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
+#gem installed for security, to keep secret keys from being visible on github
+gem 'dotenv-rails', groups: [:development, :test]
+#gem to connect clooudinary storage service
+gem 'cloudinary', '~> 1.12.0'
+
 # gem devise for signin and user models
 gem 'devise'
 # Use Active Storage variant
