@@ -22,7 +22,9 @@
   <%@top_powers.each do |top_power| %>
     <div class="power-card">
       <% if top_power.photo.attached? %>
-        <%= cl_image_tag top_power.photo.key, height: 240, width: 320, crop: :fill %>
+        <%= link_to power_path(top_power) do %>
+          <%= cl_image_tag top_power.photo.key, height: 240, width: 320, crop: :fill %>
+        <% end %>
       <% end %>
       <h3 class="card-title"><strong><%= top_power.name %></strong></h3>
       <div class="card-text">

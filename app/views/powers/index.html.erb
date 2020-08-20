@@ -12,17 +12,19 @@
 
 <div class='power-card-grid'>
   <%@powers.each do |power| %>
-    <div class="power-card">
-      <% if power.photo.attached? %>
-        <%= cl_image_tag power.photo.key, crop: :fill %>
-      <% end %>
-      <h3 class="card-title"><strong><%= power.name %></strong></h3>
-      <div class="card-text">
-        <p><%= power.short_description %></p>
+      <div class="power-card">
+        <% if power.photo.attached? %>
+          <%= link_to power_path(power) do %>
+            <%= cl_image_tag power.photo.key, crop: :fill %>
+          <% end %>
+        <% end %>
+        <h3 class="card-title"><strong><%= power.name %></strong></h3>
+        <div class="card-text">
+          <p><%= power.short_description %></p>
+        </div>
+        <span class="price-tag"><%= power.price %>$</span>
       </div>
-      <span class="price-tag"><%= power.price %>$</span>
-    </div>
-    <% end %>
+  <% end %>
 </div>
 
 
