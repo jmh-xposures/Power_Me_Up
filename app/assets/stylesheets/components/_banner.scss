@@ -1,4 +1,4 @@
-.large-banner {
+.large-banner-home {
   background-image: url("https://assets1.ignimgs.com/2019/02/19/top100-superpowers-desktop-1550599790756.jpg");
   background-size: cover;
   height: 400px;
@@ -7,7 +7,29 @@
   justify-content: center;
   position: relative;
 }
+.large-banner-index {
+  background-image: url("https://dailysuperheroes.com/wp-content/uploads/2017/06/bottleneck_nycc_jp_valderrama_batman_villains_poker-thumb.jpg");
+  background-size: cover;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
 
+.big-border-radius {
+  border-radius: 50px;
+  margin: 15px;
+}
+.searchflexx { 
+  display: flex;
+  justify-content: space-around;
+}
+
+.searchflexx input:first-child {
+  width: 300px;
+
+}
 #signup-btn {
   position: absolute;
   top: 20px;

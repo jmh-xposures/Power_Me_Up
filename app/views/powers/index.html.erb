@@ -1,23 +1,26 @@
 <%= form_tag powers_path, method: :get do %>
+<div class= "large-banner-index">
+    <div class= "searchflexx">
+		<%= select_tag "hero",
 
-	<%= select_tag "hero",
-	options_from_collection_for_select(User.all, :id, :full_name),
+		options_from_collection_for_select(User.all, :id, :full_name),
+		prompt:"Select a Hero",
 	
-	class: "form-control"
-	%>
-
-  <%= text_field_tag :query,
-    params[:query],
-    class: "form-control",
-    placeholder: "Find a Power"
-  %>
-
-
-
-  <%= submit_tag "Search", class: "btn btn-primary" %>
+		class: "form-control big-border-radius"
+		%>
+   
+     <%= text_field_tag :query,
+     params[:query],
+     class: "form-control big-border-radius",
+     placeholder: "Find a Power"
+     %>
 
 
 
+     <%= submit_tag "Search", class: "btn btn-primary big-border-radius" %>
+
+   </div>
+</div>
 
 <% end %>
 
