@@ -14,12 +14,13 @@
 
   <body>
    <%= render 'shared/navbar' %>
-    <%= yield %>
+
+    <div style="margin-top: 66px; min-height: calc(100vh - 170px); "><%= yield %></div>
 
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
 
+    <%= render 'shared/footer' %>
   </body>
-  <%= render 'shared/footer' %>
 </html>
 
