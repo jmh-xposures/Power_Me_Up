@@ -1,0 +1,70 @@
+.approval-card {
+    overflow: hidden;
+    height: 160px;
+    background: white;
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    display: flex;
+    align-items: center;
+    margin: 10px;
+  }
+  
+  .approval-card-avatar {
+    height: 100%;
+    width: 160px;
+    object-fit: cover;
+  }
+  
+  .approval-card h2 {
+    font-size: 16px;
+    font-weight: bold;
+    margin: 0;
+  }
+  
+  .approval-card p {
+    font-size: 12px;
+    line-height: 1.4;
+    opacity: .7;
+    margin-bottom: 0;
+    margin-top: 8px;
+  }
+  
+  // .approval-card .approval-card-infos, .comment {
+  //   padding: 2px 16px;
+  // }
+
+  .info-comment {
+    display: flex;
+    flex-direction: column;
+    margin: 2px 16px;
+    height: 100%;
+    width: 100%;
+  }
+
+  .info-comment .comment {
+    border: 1px solid grey;
+    height: 100%;
+    width: 100%;
+    margin-right: 5px;
+    p {
+      margin: 1px;
+    }
+  }
+
+  .comment-buttons {
+    display: flex;
+    width: 100%;
+    padding-top: 10px;
+  }
+
+.approval-card-avatar-icon{
+  font-size: 110px;
+  width: 160px;
+  text-align: center;
+  flex-grow: 1;
+  flex-shrink: 0;
+}
+
+.approval-button {
+  margin: 2px;
+  width: 100%;
+}

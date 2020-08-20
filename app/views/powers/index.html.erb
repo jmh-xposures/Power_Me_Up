@@ -1,3 +1,12 @@
+<%= form_tag powers_path, method: :get do %>
+  <%= text_field_tag :query,
+    params[:query],
+    class: "form-control",
+    placeholder: "Find a Power"
+  %>
+  <%= submit_tag "Search", class: "btn btn-primary" %>
+<% end %>
+
 <% @powers.each do |power| %>
   <div>
     <h2><%= link_to power.name, power %></h2>

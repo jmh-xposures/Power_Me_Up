@@ -1,19 +1,24 @@
 <div class="large-banner">
-  <h1 style="color: white">Power Me Up</h1>
-  <%= link_to "Sign up", new_user_registration_path, class: "btn btn-primary" %>
+      <h1 style="color: white">Power Me Up</h1>
+      <% if !(user_signed_in?) %> <!-- unless user_signed_in? -->
+        <%= link_to "Sign up", new_user_registration_path, class: "btn btn-primary", id: "signup-btn" %>
+      <% end %>
 </div>
-<h2>Top 10 rented Super Powers:</h2>
+<h2 class="text-center my-4">Top 10 rented Super Powers:</h2>
 
-<ul>
+<div class='power-card-container'>
   <%@top_powers.each do |top_power| %>
-  <li>
-    <% if top_power.photo.attached? %>
-    <%= cl_image_tag top_power.photo.key, height: 300, width: 400, crop: :fill %>
+    <div class="power-card">
+      <% if top_power.photo.attached? %>
+        <%= cl_image_tag top_power.photo.key, height: 240, width: 320, crop: :fill %>
+      <% end %>
+      <h3 class="card-title"><strong><%= top_power.name %></strong></h3>
+      <div class="card-text">
+        <p><%= top_power.short_description %></p>
+      </div>
+      <span class="price-tag"><%= top_power.price %>$</span>
+    </div>
     <% end %>
-    <p><strong><%= top_power.name %></strong></p>
-    <%= top_power.short_description %>
-    <%= top_power.price %>$
-  </li>
-  <% end %>
-</ul>
+</div>
+
 
