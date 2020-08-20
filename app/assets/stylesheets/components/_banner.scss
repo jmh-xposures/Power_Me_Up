@@ -17,6 +17,7 @@
   position: relative;
 }
 
+
 .big-border-radius {
   border-radius: 50px;
   margin: 15px;
@@ -30,6 +31,18 @@
   width: 300px;
 
 }
+
+.small-banner {
+  background-image: url("https://assets1.ignimgs.com/2019/02/19/top100-superpowers-desktop-1550599790756.jpg");
+  background-size: cover;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+
 #signup-btn {
   position: absolute;
   top: 20px;
