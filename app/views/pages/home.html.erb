@@ -13,8 +13,12 @@
         <%= cl_image_tag top_power.photo.key, height: 240, width: 320, crop: :fill %>
       <% end %>
       <h3 class="card-title"><strong><%= top_power.name %></strong></h3>
-      <p class=card-text><%= top_power.short_description %></p>
-      <p class="price-tag"><%= top_power.price %>$</p>
+      <div class="card-text">
+        <p><%= top_power.short_description %></p>
+      </div>
+      <div class="price-tag">
+        <p><%= top_power.price %>$</p>
+      </div>
     </div>
     <% end %>
 </div>
