@@ -58,6 +58,7 @@ p {
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.15);
   background: white;
   border-radius: 3px;
+  padding-bottom: 16px;
   img{
     border-radius: 3px 3px 0 0;
   }
@@ -84,4 +85,18 @@ p {
     margin-bottom: 0;
   }
 }
+
+
+.power-card-grid  {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    object-position: center;
+  }
+
+}
+
 
