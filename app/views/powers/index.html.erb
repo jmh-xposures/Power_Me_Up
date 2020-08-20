@@ -1,17 +1,25 @@
-<%= form_tag powers_path, method: :get do %>
-  <%= text_field_tag :query,
-    params[:query],
-    class: "form-control",
-    placeholder: "Find a Power"
-  %>
-  <%= submit_tag "Search", class: "btn btn-primary" %>
-<% end %>
+<div class="small-banner">
+  <%= form_tag powers_path, method: :get do %>
+    <%= text_field_tag :query,
+      params[:query],
+      class: "form-control",
+      placeholder: "Find a Power"
+    %>
+    <%= submit_tag "Search", class: "btn btn-primary" %>
+  <% end %>
+</div>
 
-<% @powers.each do |power| %>
-  <div>
-    <h2><%= link_to power.name, power %></h2>
-    <%= power.short_description %>
-    <%= power.price %>
-    <%= power.long_description %>
-  </div>
-<% end %>
+<div class='power-card-grid'>
+  <%@powers.each do |power| %>
+    <div class="power-card">
+      <% if power.photo.attached? %>
+        <%= cl_image_tag power.photo.key, crop: :fill %>
+      <% end %>
+      <h3 class="card-title"><strong><%= power.name %></strong></h3>
+      <div class="card-text">
+        <p><%= power.short_description %></p>
+      </div>
+      <span class="price-tag"><%= power.price %>$</span>
+    </div>
+    <% end %>
+</div>
