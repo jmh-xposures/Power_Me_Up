@@ -1,5 +1,9 @@
 class Power < ApplicationRecord
-	 include PgSearch::Model
+  belongs_to :user
+  has_many :rentals, dependent: :destroy
+  has_one_attached :photo
+
+	include PgSearch::Model
   pg_search_scope :general_search,
     against: [ :name, :short_description, :long_description],
     using: {
@@ -9,9 +13,6 @@ class Power < ApplicationRecord
       user: [ :full_name ]
     }
 
-  belongs_to :user
-  has_many :rentals, dependent: :destroy
-  has_one_attached :photo
 
   validates :name, :short_description, :long_description, :price, presence: true
 end
