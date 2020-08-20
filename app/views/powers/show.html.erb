@@ -1,30 +1,29 @@
-<% content_for(:name) do %>
-  Superpower - <%= @power.name %>
-<% end %>
 
 
-
-<div class="d-flex">
+<div class="container d-flex justify-content-between">
   <div class="bigcard">
-    <div class="row">
         <% if @power.photo.attached? %>
           <%= cl_image_tag @power.photo.key, height: 300, width: 400, crop: :fill %>
         <% end %>
+
+
         <h1>
           <%= @power.name %>
         </h1>
+        <p><%=@power.long_description%></p><br>
+        <p><%=@power.long_description%></p>
+
         <p>Power owned by Hero</p>
         <hr class="my-3">
         <p></p>
         <div class="price">$20.000</div>
-    </div>
-    <div class="d-flex justify-content-center">
-      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@getbootstrap">Rent Power</button>
-    </div>
+    
   </div>
 
   <div>
-    
+     <div class="d-flex justify-content-center">
+      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@getbootstrap">Rent Power</button>
+    </div>
     <p id="review"><strong>Reviews</strong></p>
 
     <div class="vertical-menu">
