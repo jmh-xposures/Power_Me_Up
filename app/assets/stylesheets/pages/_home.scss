@@ -1,1 +1,11 @@
-// Specific CSS for your home-page
+.big-border-radius {
+	border-radius:  50px;
+}// Specific CSS for your home-page
+
+.searchflex {
+	display: flex;
+}
+.searchflex input:first-child {
+	width: 400px;
+
+}
