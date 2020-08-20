@@ -1,11 +1,26 @@
+<div class="large-banner">
+</div>
 <h1> hero profile </h1>
 <%=current_user.email%>
 <%= current_user.full_name %>
 <p> pending rental <%= @number_of_pending_rentals %></p>
-
-<ul>
-	<% current_user.powers.each do |power| %>
-	    <li><%= power.name%></li>
-	  	
-	<% end %>
-</ul>
+<div class= "d-flex">
+	<div class="profile-powers">
+		<% current_user.powers.each do |power| %>
+			<div class="power-card power-card-profil">
+		<% if power.photo.attached? %>
+			<%= cl_image_tag power.photo.key, height: 240, width: 320, crop: :fill %>
+		<% end %>
+		<h3 class="card-title"><strong><%= power.name %></strong></h3>
+		<div class="card-text">
+			<p><%= power.short_description %></p>
+		</div>
+		<span class="price-tag"><%= power.price %>$</span>
+		</div>
+		<% end %>
+	</div>
+	<div class="pending-rentals-button">
+		<i class="fab fa-battle-net pending-rentals-button-icon"></i>
+		<p><%= link_to "!!! You have rental requests pending !!!", rentals_path%></p>
+	</div>
+</div>
