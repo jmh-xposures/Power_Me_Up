@@ -1,18 +1,8 @@
 <div>
-  <div>
-  <p><% @pending_rentals.each do |rental| %>
-    <%= rental.user.full_name %>
-    <%= rental.user.email %>
-    <%= rental.power.name %>
-    <%= rental.power.short_description %>
-    <%= rental.comment %>
-      <p><%= button_to 'Accept', accepted_path(rental), method: :patch %></p>
-      <p><%= button_to 'Decline', declined_path(rental), method: :patch %></p>
-    <% end %>
-  </p></div>
+  <h1>Pending Rental Approvals</h1>
+  <% @pending_rentals.each do |rental| %>
+    <%= render "rental_card", {rental: rental} %>
+  <% end %>
 </div>
-
-
-
 
 <p><%= link_to 'Back to your profile', profile_path %></p>
