@@ -1,0 +1,34 @@
+.d-flex{
+    align-items: center;
+}
+
+.profile-powers {
+    width: 50%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.power-card-profil {
+    height: 338px;
+}
+
+.pending-rentals-button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: min-content;
+    width: 25%;
+    
+    .pending-rentals-button-icon {
+        font-size: 80px;
+        width: 80px;
+        text-align: center;
+        flex-grow: 1;
+        flex-shrink: 0;
+    }
+}
+
+.avatar-user-picture {
+    
+}
