@@ -4,7 +4,11 @@ class PowersController < ApplicationController
 
   # GET /powers
   def index
-    @powers = Power.all
+     if params[:query].present?
+      @powers = Power.general_search(params[:query])
+    else
+      @powers = Power.all
+    end
   end
 
   # GET /powers/1
