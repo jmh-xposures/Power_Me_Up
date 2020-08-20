@@ -2,16 +2,26 @@
    <% if rental.user.photo.attached? %>
     <%= cl_image_tag rental.user.photo.key, class: "approval-card-avatar" %>
     <% else %>
-    <i class="fas fa-user-tie"></i>
+    <i class="fas fa-user-tie approval-card-avatar-icon"></i>
     <% end %>
-      <div class="approval-card-infos">
-        <p><strong><%= rental.user.full_name %></strong>'d like to rent a power</p>
-        <p><strong><%= rental.power.name %></strong> - <%= rental.power.short_description %></p>
-      </div>
-      <p>comment :</p>
-      <div>
-        <%= rental.comment %>
-      </div>
-    <p><%= button_to 'Accept', accepted_path(rental), method: :patch %></p>
-    <p><%= button_to 'Decline', declined_path(rental), method: :patch %></p>
+    <div class="info-comment">
+        <div class="approval-card-infos">
+            <p><strong><%= rental.user.full_name %></strong>'d like to rent a power</p>
+            <p><strong><%= rental.power.name %></strong> - <%= rental.power.short_description %></p>
+        </div>
+        <div class="comment-buttons">
+            <div class="comment">
+                <p><strong>comment :</strong></p>
+                <p><%= rental.comment %></p>
+            </div>
+            <div class="buttons">
+                <div>
+                    <%= link_to 'Accept', accepted_path(rental), method: :patch, class: "btn btn-primary approval-button" %>
+                </div>
+                <div>
+                    <%= link_to 'Decline', declined_path(rental), method: :patch, class: "btn btn-secondary approval-button" %>
+                </div>
+            </div>
+        </div>
+    </div>
   </div>
