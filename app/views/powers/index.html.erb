@@ -1,11 +1,30 @@
 <%= form_tag powers_path, method: :get do %>
+
+	<%= select_tag "hero",
+	options_from_collection_for_select(User.all, :id, :full_name),
+	
+	class: "form-control"
+	%>
+
   <%= text_field_tag :query,
     params[:query],
     class: "form-control",
     placeholder: "Find a Power"
   %>
+
+
+
   <%= submit_tag "Search", class: "btn btn-primary" %>
+
+
+
+
 <% end %>
+
+
+
+
+
 
 <% @powers.each do |power| %>
   <div>
