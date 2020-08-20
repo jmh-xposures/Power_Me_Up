@@ -7,7 +7,49 @@
   display: right;
 }
 
+.card-title {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  background-color: rgba(252, 247, 229, 0.8);
+  border-radius: 4px;
+  padding: 2px 8px;
+}
+
 .row {
   margin: 20px 20px;
   width: 700px;
+}
+
+.power-card {
+  position: relative;
+  margin: 12px 16px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.15);
+  background: white;
+  border-radius: 3px;
+  img{
+    border-radius: 3px 3px 0 0;
+  }
+}
+
+.card-text {
+  padding: 5px;
+}
+
+.power-card-container {
+  display: flex;
+  overflow-x: scroll;
+}
+
+.price-tag {
+  position: absolute;
+  background-color: rgba(0,0,0,0.15);
+  padding: 0 4px 0 4px;
+  border-radius: 3px;
+  right: 9px;
+  bottom: 9px;
+  margin: 0;
+  p {
+    margin-bottom: 0;
+  }
 }
