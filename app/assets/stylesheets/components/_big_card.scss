@@ -1,13 +1,45 @@
-
 .card {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   padding: 16px;
+  margin: 0 auto;
+  margin-bottom: 10px;
   text-align: center;
   background-color: #f1f1f1;
   display: right;
+  border: none;
 }
 
 .row {
-  margin: 20px 20px;
-  width: 700px;
+  width: 800px;
 }
+
+p {
+  text-align: left;
+}
+
+.price {
+  text-align: right;
+}
+
+#review {
+  padding-left: 180px;
+  margin: 10px;
+}
+
+.btn {
+  text-align: center;
+  border-radius: 50px;
+  padding: 5 5px;
+  margin-top: 20px;
+}
+
+.bigcard {
+  padding: 60px;
+}
+
+.vertical-menu {
+  width: 600px;
+  height: 600px;
+  overflow-x: auto;
+}
+
