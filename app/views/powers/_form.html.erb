@@ -3,6 +3,7 @@
   <%= f.input :price %>
   <%= f.input :short_description, data: { editor: 'markdown' }, rows: 3 %>
   <%= f.input :long_description, data: { editor: 'markdown' }, rows: 5 %>
-  <%= f.input :photo, as: :file, required: true %>
-  <%= f.submit %>
+  <%= f.input :photo, as: :file, required: true, class: "btn btn-primary" %>
+  <br>
+  <%= f.button :submit, class: "btn btn-primary" %>
 <% end %>

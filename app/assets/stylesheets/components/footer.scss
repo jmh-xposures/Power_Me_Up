@@ -1,6 +1,11 @@
 footer {
   width: 100vw;
-  background-color: #2B78CE;
+  background:
+      linear-gradient(
+      rgba(0, 0, 0, 0.75),
+      rgba(0, 0, 0, 0.75)
+    ),
+    url('https://static1.cbrimages.com/wordpress/wp-content/uploads/2019/08/Marvel-Vs.-DC.jpg');
   display: flex;
   justify-content: space-between;
   color: white;

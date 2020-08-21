@@ -3,6 +3,7 @@ class PowersController < ApplicationController
   before_action :set_power, only: [:show, :destroy]
 
   # GET /powers
+
   def index
      if params[:query].present?
       @powers = Power.general_search(params[:query])
@@ -13,7 +14,7 @@ class PowersController < ApplicationController
 
   # GET /powers/1
   def show
-    @rental = Rental.new 
+    @rental = Rental.new
   end
 
   # GET /powers/new
