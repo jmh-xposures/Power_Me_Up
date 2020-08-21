@@ -1,7 +1,7 @@
  <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <%= link_to "#", class: "navbar-brand" do %>
 
-    <%= cl_image_tag("lnlttkxf6tjw1eaip6qe") %>
+    <%= cl_image_tag("https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Captain_America%27s_shield.svg/1200px-Captain_America%27s_shield.svg.png") %>
 
     <% end %>
 
@@ -14,11 +14,19 @@
     <ul class="navbar-nav mr-auto">
       <% if user_signed_in? %>
         <li class="nav-item active">
-          <%= link_to "Home", "#", class: "nav-link" %>
+          <%= link_to "Home", "/", class: "nav-link" %>
         </li>
-        <li class="nav-item">
-          <%= link_to "Messages", "#", class: "nav-link" %>
+         <li class="nav-item active">
+         <%= link_to "All Powers", powers_path, class: "nav-link"%>
         </li>
+         <li class="nav-item active">
+          <%= link_to "Profile", profile_path,class: "nav-link" %>
+        </li>
+         <!-- <p><%= link_to "All Powers", powers_path, class: "nav-link"%></p> -->
+    <!-- <p><%= link_to "Profile", profile_path %></p> -->
+    <!-- <p><%= link_to "HomePage", root_path %></p> -->
+        <!-- <li class="nav-item"> -->
+      
         <li class="nav-item dropdown">
           <% if current_user.photo.attached? %>
           <%= cl_image_tag current_user.photo.key, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
