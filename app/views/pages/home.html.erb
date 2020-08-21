@@ -30,7 +30,9 @@
       <div class="card-text">
         <p><%= top_power.short_description %></p>
       </div>
-      <span class="price-tag"><%= top_power.price %>$</span>
+      <div style="text-align: right;">
+        <span class="price-tag mr-2"><%= top_power.price.to_s.reverse.scan(/\d{3}|.+/).join(",").reverse %>$</span>
+      </div>
     </div>
     <% end %>
 </div>
