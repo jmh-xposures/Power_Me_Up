@@ -8,9 +8,14 @@
   position: relative;
 }
 .large-banner-index {
-  background-image: url("https://dailysuperheroes.com/wp-content/uploads/2017/06/bottleneck_nycc_jp_valderrama_batman_villains_poker-thumb.jpg");
+   background:
+      linear-gradient(
+      rgba(0, 0, 0, 0.75),
+      rgba(0, 0, 0, 0.75)
+    ),
+url("https://dailysuperheroes.com/wp-content/uploads/2017/06/bottleneck_nycc_jp_valderrama_batman_villains_poker-thumb.jpg");
   background-size: cover;
-  height: 400px;
+  height: 320px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -22,7 +27,7 @@
   border-radius: 50px;
   margin: 15px;
 }
-.searchflexx { 
+.searchflexx {
   display: flex;
   justify-content: space-around;
 }
