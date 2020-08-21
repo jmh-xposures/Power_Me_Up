@@ -4,7 +4,7 @@
     <div class= "searchflexx">
 		<%= select_tag "hero", options_from_collection_for_select(User.all, :id, :full_name),
 		prompt:"Select a Hero", class: "form-control big-border-radius"%>
-
+         
      <%= text_field_tag :query,
      params[:query],
      class: "form-control big-border-radius",

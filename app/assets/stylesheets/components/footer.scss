@@ -1,7 +1,7 @@
 footer {
   width: 100vw;
   filter: sepia(80%) hue-rotate(190deg) saturate(500%);
-  background:
+  background:linear-gradient(130deg,rgba(0,0,0,0.7),rgba(0,0,0,0.2)),
     url('https://static1.cbrimages.com/wordpress/wp-content/uploads/2019/08/Marvel-Vs.-DC.jpg');
   display: flex;
   justify-content: space-between;
