@@ -14,6 +14,7 @@
     <ul class="navbar-nav mr-auto">
       <% if user_signed_in? %>
         <li class="nav-item active">
+
           <%= link_to "Home", "/", class: "nav-link" %>
         </li>
          <li class="nav-item active">
@@ -27,6 +28,7 @@
     <!-- <p><%= link_to "HomePage", root_path %></p> -->
         <!-- <li class="nav-item"> -->
       
+
         <li class="nav-item dropdown">
           <% if current_user.photo.attached? %>
           <%= cl_image_tag current_user.photo.key, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
