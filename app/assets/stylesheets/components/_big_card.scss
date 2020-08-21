@@ -42,7 +42,31 @@ p {
 }
 
 .bigcard {
-  padding: 60px;
+ width: 600px;
+ margin-left: 40px;
+ background-color: white;
+ position: relative;
+ box-shadow: 0 0 30px rgba(0,0,0, 0.3);
+ border-radius: 4px;
+}
+
+.card-pic {
+  margin-bottom: 10px;
+  img{
+    width: 100%;
+    object-fit: cover;
+    border-radius: 4px 4px 0 0;
+  }
+}
+
+#card-title {
+  background-color: rgba(252, 247, 229, 0.8);
+  display: inline;
+  padding: 5px;
+  border-radius: 5px;
+  position: absolute;
+  top: 15px;
+  left: 10px;
 }
 
 .vertical-menu {
@@ -54,10 +78,11 @@ p {
 
 .power-card {
   position: relative;
-  margin: 12px 16px;
+  margin: 12px 20px;
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.15);
   background: white;
   border-radius: 3px;
+  padding-bottom: 16px;
   img{
     border-radius: 3px 3px 0 0;
   }
@@ -73,15 +98,41 @@ p {
 }
 
 .price-tag {
-  position: absolute;
-  background-color: rgba(0,0,0,0.15);
-  padding: 0 4px 0 4px;
+  position:absolute;
+  bottom: 10px;
+  right: 10px;
+  background-color: rgba(180,180,180,0.20);
+  padding: 2px 5px 2px 5px;
   border-radius: 3px;
-  right: 9px;
-  bottom: 9px;
   margin: 0;
   p {
     margin-bottom: 0;
   }
 }
+
+.price-tag-big-card {
+
+  background-color: rgba(180,180,180,0.20);
+  padding: 2px 5px 2px 5px;
+  border-radius: 3px;
+  margin: 0;
+  p {
+    margin-bottom: 0;
+  }
+}
+
+
+.power-card-grid  {
+  margin-top: 30px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    object-position: center;
+  }
+
+}
+
 

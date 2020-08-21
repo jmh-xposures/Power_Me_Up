@@ -1,8 +1,20 @@
-<div class="large-banner">
-      <h1 style="color: white">Power Me Up</h1>
-      <% if !(user_signed_in?) %> <!-- unless user_signed_in? -->
-        <%= link_to "Sign up", new_user_registration_path, class: "btn btn-primary", id: "signup-btn" %>
-      <% end %>
+<div class="large-banner-home">
+	<div>
+		<h1 style="color: white; text-align: center;">Power Me Up</h1>
+	  	<%= form_tag powers_path, method: :get do %>
+	  		<div class= "searchflex">
+		  		<%= text_field_tag :query,
+			    params[:query],
+			    class: "form-control big-border-radius",
+			    placeholder: "Find a Power"
+			  	%>
+		  		<%= submit_tag "Search", class: "btn btn-primary big-border-radius" %>
+	  		</div>
+		<% end %>
+	    <% if !(user_signed_in?) %> <!-- unless user_signed_in? -->
+	        <%= link_to "Sign up", new_user_registration_path, class: "btn btn-primary", id: "signup-btn" %>
+	    <% end %>
+	</div>
 </div>
 <h2 class="text-center my-4">Top 10 rented Super Powers:</h2>
 
@@ -10,13 +22,17 @@
   <%@top_powers.each do |top_power| %>
     <div class="power-card">
       <% if top_power.photo.attached? %>
-        <%= cl_image_tag top_power.photo.key, height: 240, width: 320, crop: :fill %>
+        <%= link_to power_path(top_power) do %>
+          <%= cl_image_tag top_power.photo.key, height: 240, width: 320, crop: :fill %>
+        <% end %>
       <% end %>
       <h3 class="card-title"><strong><%= top_power.name %></strong></h3>
       <div class="card-text">
         <p><%= top_power.short_description %></p>
       </div>
-      <span class="price-tag"><%= top_power.price %>$</span>
+      <div style="text-align: right;">
+        <span class="price-tag mr-2"><%= top_power.price.to_s.reverse.scan(/\d{3}|.+/).join(",").reverse %>$</span>
+      </div>
     </div>
     <% end %>
 </div>
