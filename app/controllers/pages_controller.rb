@@ -6,7 +6,8 @@ class PagesController < ApplicationController
   		@number_of_pending_rentals = Rental.joins(:power).where(status: nil , powers: {user: current_user}).count 
   	   render "hero" 
   	 else 
-  	   render "human"   
+      @rentals = current_user.rentals   
+      render "human"
   	end	
   end
 

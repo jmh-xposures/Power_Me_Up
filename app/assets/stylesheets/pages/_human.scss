@@ -52,3 +52,40 @@
     padding: 16px;
   }
   
+  .human-profile-avatar {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+    position: relative;
+    bottom: 150px;
+    object-fit: cover;
+    margin-bottom: -150px;
+}
+
+.human-avatar-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.powers-renting {
+  display: flex;
+}
+
+.pending-rentals{
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  width: 50%;
+  padding: 10px;
+}
+
+.historical {
+  width: 50%;
+  padding: 10px;
+}
+
+.pending-rental-card {
+  display: flex;
+}

@@ -40,11 +40,11 @@
 		</div>
 		<p><%= link_to "New Power", new_power_path, class:"btn btn-primary" %></p>
 	</div>
-	<div class="avatar-box">
+	<div class="hero-avatar-box">
 		<% if current_user.photo.attached? %>
-          <%= cl_image_tag current_user.photo.key, class: "profile-avatar" %>
+          <%= cl_image_tag current_user.photo.key, class: "hero-profile-avatar" %>
           <% else %>
-          <%= image_tag "https://kitt.lewagon.com/placeholder/users/Papillard", class: "profile-avatar" %>
+          <%= image_tag "https://kitt.lewagon.com/placeholder/users/Papillard", class: "hero-profile-avatar" %>
           <% end %>
 		  <h3><%= current_user.full_name %></h3>
 	</div>
