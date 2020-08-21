@@ -1,14 +1,42 @@
-footer {
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700|Poppins:700');
+/* Fontawesome */
+@import url('https://use.fontawesome.com/releases/v5.6.3/css/all.css');
+
+.footer {
   width: 100vw;
-  filter: sepia(80%) hue-rotate(190deg) saturate(500%);
-  background:
-    url('https://static1.cbrimages.com/wordpress/wp-content/uploads/2019/08/Marvel-Vs.-DC.jpg');
+  // background:
+  //   url('https://static1.cbrimages.com/wordpress/wp-content/uploads/2019/08/Marvel-Vs.-DC.jpg');
   display: flex;
-  justify-content: space-between;
-  color: white;
+  flex-direction: column;
+  justify-content: center;
+  align-items: space-evenly;
   height: 120px;
   margin-top: 50px;
-  a {
-    color: white;
-  }
+  color: black;
+  text-align: center;
+  padding: 50px;
+  background-color: rgba(78, 179, 247, 0.9);
+}
+
+.a {
+  color: white;
+  text-decoration: none;
+}
+
+.footer-power {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  padding-top: 20px;
+}
+
+#copyright {
+  text-align: center;
+  font-size: bold;
+  font-family: Georgia, sans-serif;
+  padding-bottom: 10px;
+}
+
+.links {
+  font-size: 25px;
 }
