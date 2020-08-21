@@ -235,13 +235,13 @@ miguel = User.create!(
 image_miguel = URI.open('https://avatars3.githubusercontent.com/u/64239865?v=4')
 miguel.photo.attach(io: image_miguel, filename: 'miguel.jpg', content_type: 'image/jpg')
 
-kahina = User.create!(
-  email: "kahina@wagon.com",
-  full_name: "kahina",
-  is_hero: false,
-  password: 123456)
-image_kahina = URI.open('https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1594662893/wxc2ykklbz0letyf2vji.jpg')
-kahina.photo.attach(io: image_kahina, filename: 'kahina.jpg', content_type: 'image/jpg')
+# @kahina = User.create!(
+#   email: "kahina@wagon.com",
+#   full_name: "kahina",
+#   is_hero: false,
+#   password: 123456)
+# image_kahina = URI.open('https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1594662893/wxc2ykklbz0letyf2vji.jpg')
+# @kahina.photo.attach(io: image_kahina, filename: 'kahina.jpg', content_type: 'image/jpg')
 
 junior = User.create!(
   email: "junior@wagon.com",
@@ -249,19 +249,25 @@ junior = User.create!(
   is_hero: false,
   password: 123456)
 image_junior = URI.open('https://avatars2.githubusercontent.com/u/67280424?v=4')
-junior.photo.attach(io: image_junior, filename: 'kahina.jpg', content_type: 'image/jpg')
+junior.photo.attach(io: image_junior, filename: 'junior.jpg', content_type: 'image/jpg')
 
 Rental.create!(
-  comment: "lorem ipsum",
-  power: Power.first,
-  user: humans.first
+  comment: "I'd like to borrow your power to smash everything when the Canadians lose a game !!!",
+  power: hulkify,
+  user: junior
   )
 
-# Rental.create!(
-#   comment: "lorem ipsum",
-#   power: Power.second,
-#   user: humans.first
-#   )
+Rental.create!(
+  comment: "I'd like to go running naked in the snow this weekend",
+  power: temp_resistance,
+  user: miguel
+  )
+
+Rental.create!(
+  comment: "I think our teachers at Lewagon are lying to us sometime during the lecture....just want to make sure....",
+  power: lie_detection,
+  user: thomas
+  )
 
 # Rental.create!(
 #   comment: "lorem ipsum",
