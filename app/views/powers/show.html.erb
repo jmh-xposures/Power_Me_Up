@@ -2,29 +2,28 @@
 
 <div class="container d-flex justify-content-between">
   <div class="bigcard">
-        <% if @power.photo.attached? %>
-          <%= cl_image_tag @power.photo.key, height: 300, width: 400, crop: :fill %>
-        <% end %>
+    <div class="card-pic">
+      <% if @power.photo.attached? %>
+        <%= cl_image_tag @power.photo.key, height: 300, width: 400, crop: :fill %>
+      <% end %>
+    </div>
+    <h1 id="card-title">
+      <%= @power.name %>
+    </h1>
+    <p style="margin-left: 10px;">Power owned by <strong><%= @power.user.full_name %></strong></p>
+    <p style="margin-left: 10px;"><%=@power.long_description%></p>
+    <div style="text-align: right">
+      <span class="price-tag-big-card mr-3"><%= @power.price.to_s.reverse.scan(/\d{3}|.+/).join(",").reverse %>$</span>
+    </div>
+    <hr class="my-3">
+    <div class="d-flex justify-content-center">
+      <button style="margin-top: 0; margin-bottom: 20px;" type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@getbootstrap">Rent Power</button>
+    </div>
 
-
-        <h1>
-          <%= @power.name %>
-        </h1>
-        <p><%=@power.long_description%></p><br>
-        <p><%=@power.long_description%></p>
-
-        <p>Power owned by Hero</p>
-        <hr class="my-3">
-        <p></p>
-        <div class="price">$20.000</div>
-    
   </div>
 
   <div>
-     <div class="d-flex justify-content-center">
-      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@getbootstrap">Rent Power</button>
-    </div>
-    <p id="review"><strong>Reviews</strong></p>
+    <p style="margin-top: 70px" id="review"><strong>Reviews</strong></p>
 
     <div class="vertical-menu">
       <div class="row">
@@ -84,7 +83,7 @@
 
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-      
+
       </div>
     </div>
   </div>
