@@ -5,6 +5,7 @@ class PowersController < ApplicationController
   # GET /powers
 
   def index
+    @heros = User.where(is_hero: true)
     if params[:query].present?
       @powers = Power.general_search(params[:query])
     elsif params[:hero].present?
