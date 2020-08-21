@@ -1,28 +1,51 @@
-<div class="large-banner">
+<div class="small-banner">
 </div>
-<h1> hero profile </h1>
-<%=current_user.email%>
-<%= current_user.full_name %>
-<p> pending rental <%= @number_of_pending_rentals %></p>
-<div class= "d-flex">
-	<div class="profile-powers">
-		<% current_user.powers.each do |power| %>
-			<div class="power-card power-card-profil">
-		<% if power.photo.attached? %>
-			<%= cl_image_tag power.photo.key, height: 240, width: 320, crop: :fill %>
-		<% end %>
-		<h3 class="card-title"><strong><%= power.name %></strong></h3>
-		<div class="card-text">
-			<p><%= power.short_description %></p>
+<div class= "hero-profil-container">
+	<div class= "powers-box">
+	
+	<% if @number_of_pending_rentals > 0 %>
+		<div class="pending-rentals-button">
+			<i style= "color : #F39648;" class="fab fa-battle-net pending-rentals-button-icon"></i>
+			<p><%= link_to "!!! You have rental requests pending !!!", rentals_path%></p>
 		</div>
-		<span class="price-tag"><%= power.price.to_s.reverse.scan(/\d{3}|.+/).join(",").reverse %>$</span>
+	<% else	%>
+		<div class="pending-rentals-button">
+			<i class="fab fa-battle-net pending-rentals-button-icon"></i>
+			<p><%= link_to "!!! You have rental requests pending !!!", rentals_path%></p>
+		</div>	
+	<% end %>
+	
+		<div class="powers">
+			<h4>Your powers :</h4>
+			<div>
+				<div class='power-card-container'>
+					<% current_user.powers.each_with_index do |power, i| %>
+						<div class="power-card power-card-profil">
+							<% if power.photo.attached? %>
+								<%= link_to power_path(power) do %>
+									<%= cl_image_tag power.photo.key, height: 240, width: 320, crop: :fill %>
+								<% end %>
+							<% end %>
+							<h3 class="card-title"><strong><%= power.name %></strong></h3>
+							<div class="card-text">
+								<p><%= power.short_description %></p>
+							</div>
+							<div style="text-align: right;">
+								<span class="price-tag mr-2"><%= power.price.to_s.reverse.scan(/\d{3}|.+/).join(",").reverse %>$</span>
+							</div>
+						</div>
+						<% end %>
+				</div>
+			</div>
 		</div>
-		<% end %>
+		<p><%= link_to "New Power", new_power_path, class:"btn btn-primary" %></p>
 	</div>
-	<div class="pending-rentals-button">
-		<i class="fab fa-battle-net pending-rentals-button-icon"></i>
-		<p><%= link_to "!!! You have rental requests pending !!!", rentals_path%></p>
+	<div class="avatar-box">
+		<% if current_user.photo.attached? %>
+          <%= cl_image_tag current_user.photo.key, class: "profile-avatar" %>
+          <% else %>
+          <%= image_tag "https://kitt.lewagon.com/placeholder/users/Papillard", class: "profile-avatar" %>
+          <% end %>
+		  <h3><%= current_user.full_name %></h3>
 	</div>
 </div>
-<p><%= link_to "New Power", new_power_path, class:"btn btn-primary" %></p>
-<p ><%= link_to "Rental Requets", rentals_path, class:"btn btn-primary" %></p>
