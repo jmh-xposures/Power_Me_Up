@@ -18,3 +18,12 @@ body {
   background-color: #E1EDF2;
   min-height: 100vh;
 }
+@font-face {
+font-family: "AvengeroDisassembledRegular-nRvd4";
+src: font-url('AvengeroDisassembledRegular-nRvd4.ttf') format("truetype");
+
+}
+h1 {
+	font-family: "AvengeroDisassembledRegular-nRvd4";
+    text-shadow: 2px 2px 8px black;
+}
