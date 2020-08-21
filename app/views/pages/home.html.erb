@@ -1,6 +1,6 @@
 <div class="large-banner-home">
 	<div>
-		<h1 style="color: white; text-align: center; font-size: 90px;">Power Me Up</h1>
+		<h1 class="homeheader" style="color: white; text-align: center; font-size: 42px;">Power Me Up</h1>
 	  	<%= form_tag powers_path, method: :get do %>
 	  		<div class= "searchflex">
 		  		<%= text_field_tag :query,
@@ -16,7 +16,7 @@
 	    <% end %>
 	</div>
 </div>
-<h2 class="text-center my-4">Top 10 rented Super Powers:</h2>
+<h2 class="text-center my-4 homesubheader">Top 10 rented Super Powers:</h2>
 
 <div class='power-card-container'>
   <%@top_powers.each do |top_power| %>
