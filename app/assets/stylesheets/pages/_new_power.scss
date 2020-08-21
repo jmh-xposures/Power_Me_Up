@@ -1,0 +1,16 @@
+.new_form_container {
+  position: relative;
+}
+
+.back_link {
+  position: absolute;
+  bottom: 0px;
+  right: 0;
+  border: solid 1px black;
+  transition: 1s;
+}
+
+.back_link:hover {
+  color: blue;
+  border: solid 1px blue;
+}
