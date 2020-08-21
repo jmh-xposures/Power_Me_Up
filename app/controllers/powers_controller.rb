@@ -30,7 +30,7 @@ class PowersController < ApplicationController
     @power = Power.new(power_params)
     @power.user = current_user
     if @power.save
-      redirect_to @power, notice: 'Power was successfully created!'
+      redirect_to profile_path, notice: 'Power was successfully created!'
     else
       render :new
     end
