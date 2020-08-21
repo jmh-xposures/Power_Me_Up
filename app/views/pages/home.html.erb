@@ -1,6 +1,6 @@
 <div class="large-banner-home">
 	<div>
-		<h1 style="color: white; text-align: center;">Power Me Up</h1>
+		<h1 style="color: white; text-align: center; font-size: 90px;">Power Me Up</h1>
 	  	<%= form_tag powers_path, method: :get do %>
 	  		<div class= "searchflex">
 		  		<%= text_field_tag :query,
@@ -36,7 +36,7 @@
     </div>
     <% end %>
 </div>
-<div class="container mt-4" style="text-align: center;">
+<div class="container mt-4" style="text-align: center; background: rgba(255, 255, 255, 0.5); padding: 10px 0; border-radius: 8px;">
 <h3>Access the list of all our Super Powers for rental</h3>
   <p style="text-align: center;"><%= link_to "All Powers", powers_path, class: "btn btn-primary" %></p>
 </div>
