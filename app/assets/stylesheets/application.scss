@@ -23,7 +23,11 @@ font-family: "AvengeroDisassembledRegular-nRvd4";
 src: font-url('AvengeroDisassembledRegular-nRvd4.ttf') format("truetype");
 
 }
-h1 {
+.homeheader {
 	font-family: "AvengeroDisassembledRegular-nRvd4";
     text-shadow: 2px 2px 8px black;
+}
+.homesubheader {
+	font-family: "AvengeroDisassembledRegular-nRvd4";
+    font-size: 24px;
 }
