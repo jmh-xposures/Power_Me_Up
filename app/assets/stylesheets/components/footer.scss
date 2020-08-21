@@ -4,8 +4,14 @@
 
 .footer {
   width: 100vw;
+
   // background:
   //   url('https://static1.cbrimages.com/wordpress/wp-content/uploads/2019/08/Marvel-Vs.-DC.jpg');
+
+  filter: sepia(80%) hue-rotate(190deg) saturate(500%);
+  background:linear-gradient(130deg,rgba(0,0,0,0.7),rgba(0,0,0,0.2)),
+    url('https://static1.cbrimages.com/wordpress/wp-content/uploads/2019/08/Marvel-Vs.-DC.jpg');
+
   display: flex;
   flex-direction: column;
   justify-content: center;
