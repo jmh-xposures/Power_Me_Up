@@ -9,11 +9,9 @@
 }
 .large-banner-index {
    background:
-      linear-gradient(
-      rgba(0, 0, 0, 0.75),
-      rgba(0, 0, 0, 0.75)
-    ),
+   
 url("https://dailysuperheroes.com/wp-content/uploads/2017/06/bottleneck_nycc_jp_valderrama_batman_villains_poker-thumb.jpg");
+filter: sepia(80%) hue-rotate(190deg) saturate(500%);
   background-size: cover;
   height: 320px;
   display: flex;
