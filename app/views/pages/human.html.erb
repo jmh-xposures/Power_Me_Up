@@ -1,69 +1,53 @@
-<h1> human profile  </h1>
-<%= current_user.email %>
-<%= current_user.full_name %>
+<div class="small-banner">
+</div>
 
-<ul>
-  <% current_user.rentals.each do |rental| %>
-    <li><%= rental.power.name %></li>
-  <% end %>
-</ul>
-
-<div class="d-flex justify-content-around">
-<%# <div class="container d-flex justify-content-center"> %>
-    <div>
+<div class="human-main-box">
+  <div class="human-avatar-box">
+    <% if current_user.photo.attached? %>
+      <%= cl_image_tag current_user.photo.key, class: "human-profile-avatar" %>
+      <% else %>
+      <%= image_tag "https://kitt.lewagon.com/placeholder/users/Papillard", class: "human-profile-avatar" %>
+      <% end %>
+      <h3><%= current_user.full_name %></h3>
+  </div>
+  <div class="powers-renting">
+    <div class="pending-rentals">
       <h2>Pending Rentals</h2>
-        <div class="card-product">
-          <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
-          <div class="card-product-infos">
-            <h2>Product name</h2>
-            <p>Product description with <strong>relevant info</strong> only.</p>
-          </div>
-        </div>
 
-      <div class="card-product">
-          <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
-          <div class="card-product-infos">
-            <h2>Product name</h2>
-            <p>Product description with <strong>relevant info</strong> only.</p>
-          </div>
-        </div>
-        <div class="card-product">
-          <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
-          <div class="card-product-infos">
-            <h2>Product name</h2>
-            <p>Product description with <strong>relevant info</strong> only.</p>
-          </div>
-        </div>
+      <div class="pending-rental-card">
+        <% @rentals.each do |rental| %>
+          <% if rental.status == nil %>
+            <div class="card-product">
+              <%= cl_image_tag rental.power.photo.key, crop: :fill %>
+              <div>
+                <h3><%= rental.power.name %></h3>
+                <p><%= rental.power.short_description %></p>
+              </div>
+            </div>
+            <% end %>
+        <% end %>
+      </div>
 
     </div>
 
-    <div>
+    <div class="historical">
       <h2>Historical</h2>
-        <div class="card-product">
-          <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
-          <div class="card-product-infos">
-            <h2>Product name</h2>
-            <p>Product description with <strong>relevant info</strong> only.</p>
-          </div>
-        </div>
-      <div class="card-product">
-          <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
-          <div class="card-product-infos">
-            <h2>Product name</h2>
-            <p>Product description with <strong>relevant info</strong> only.</p>
-          </div>
-        </div>
-        <div class="card-product">
-          <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
-          <div class="card-product-infos">
-            <h2>Product name</h2>
-            <p>Product description with <strong>relevant info</strong> only.</p>
-          </div>
-        </div>
+
+      <div class="pending-rental-card">
+        <% @rentals.each do |rental| %>
+          <% if rental.status == true %>
+            <div class="card-product">
+              <%= cl_image_tag rental.power.photo.key, crop: :fill %>
+              <div>
+                <h3><%= rental.power.name %></h3>
+                <p><%= rental.power.short_description %></p>
+              </div>
+            </div>
+            <% end %>
+        <% end %>
+      </div>
+
     </div>
-
-
-
   </div>
 </div>
 
